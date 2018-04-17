@@ -1,0 +1,40 @@
+<% provide(:title, "Sign up") %>
+<h1>New User</h1>
+
+<!-- <form action="/user" method="post" accept-charset="UTF-8">
+	Name:<br>
+	<input type="text" name="user[name]"><br>
+	Email:<br>
+	<input type="text" name="user[email]"><br>
+	Password:<br>
+	<input type="password" name="user[password]"><br>
+	Verify Password:<br>
+	<input type="password" name="user[password_confirmation]"><br><br>
+	<input type="submit" value="Submit">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form> -->
+
+<!--<%= form_tag("/user") do %>
+		Name:<br>
+		<%= text_field_tag(:name) %><br>
+		Email:<br>
+		<%= email_field_tag(:email) %><br>
+		Password:<br>
+		<%= password_field_tag(:password) %><br>
+		Confirm Password:<br>
+		<%= password_field_tag(:password_confirmation) %><br><br>
+		<%= submit_tag("Submit") %>
+	<% end %> -->
+
+<%= form_for(@user, url: "/user") do |f| %>
+	Name:<br>
+	<%= f.text_field :name, :value => "Your name here" %><br>
+	Email:<br>
+	<%= f.text_field :email, :value => "Your email here" %><br>
+	Password:<br>
+	<%= f.password_field :password %><br>
+	Confirm Password:<br>
+	<%= f.password_field :password %><br>
+	<br>
+	<%= f.submit %>
+<% end %>

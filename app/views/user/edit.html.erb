@@ -1,0 +1,15 @@
+<h1>Edit User</h1>
+
+
+<%= form_for(@user, url: user_path) do |f| %>
+	Name:<br>
+	<%= f.text_field :name, :value => "Your name here" %><br>
+	Email:<br>
+	<%= f.text_field :email, :value => "Your email here" %><br>
+	Password:<br>
+	<%= f.password_field :password %><br>
+	Confirm Password:<br>
+	<%= f.password_field :password %><br>
+	<br>
+	<%= f.submit %>
+<% end %>
